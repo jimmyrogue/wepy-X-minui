@@ -1,7 +1,7 @@
 # wepy-X-minui
 wepy with minui
 
-##min-cli 1.0.4, wepy 1.6.0
+#min-cli 1.0.4, wepy 1.6.0
 
 使用方法
 1、新建wepy项目
