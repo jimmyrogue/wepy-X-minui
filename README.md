@@ -32,6 +32,5 @@ wepy with minui
 ```
 $ min install @minui/wxc-loading
 ```
-4、由于目前minui需要开启es5->es6，而wepy需要关闭，所以暂时需要将组件的
 
-5、在页面使用，this.$wxpage.selectComponent方法调用
+4、在页面使用，this.$wxpage.selectComponent方法调用（详见index.wpy）
