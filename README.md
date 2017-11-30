@@ -1,22 +1,37 @@
 # wepy-X-minui
 wepy with minui
 
-##目前已经初步调用成功
+##min-cli 1.0.4, wepy 1.6.0
 
 使用方法
+1、新建wepy项目
 
-1、使用$ min install @minui/wxc-xxxx 命令 安装组件
+2、新建配置文件：min.config.json
+配置内容：
+```
+{
+"compilers": {
+    "babel": {
+      "sourceMaps": "inline",
+      "presets": [
+        "env"
+      ],
+      "plugins": [
+        "syntax-export-extensions",
+        "transform-class-properties",
+        "transform-decorators-legacy",
+        "transform-export-extensions"
+      ]
+    }
+  }
+}
+```
+
+3、这个时候通过 min install @minui/wxc-xxx 组件
 
 ```
 $ min install @minui/wxc-loading
 ```
-2、由于目前minui需要开启es5->es6，而wepy需要关闭，所以暂时需要将组件的
-```
-export default Component
-```
-改成
-```
-module.export = Component
-```
+4、由于目前minui需要开启es5->es6，而wepy需要关闭，所以暂时需要将组件的
 
-3、在页面使用，this.$wxpage.selectComponent方法调用
+5、在页面使用，this.$wxpage.selectComponent方法调用
