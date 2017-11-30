@@ -1,0 +1,32 @@
+<style lang="less">
+
+
+</style>
+<template>
+  <button bindtap="showDialog">标题+单行内容+取消按钮+确认按钮</button>
+  <wxc-dialog class="wxc-dialog" title="标题" content="告知当前状态，信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm"
+    bindcancel="onCancel"></wxc-dialog>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'wepy-X-minui',
+      usingComponents: {
+        'wxc-dialog': '../packages/@minui/wxc-dialog/dist/index'
+      }
+    }
+    methods = {
+      showDialog() {
+        let dialogComponent = this.$wxpage.selectComponent('.wxc-dialog')
+        dialogComponent && dialogComponent.show();
+      },
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>
