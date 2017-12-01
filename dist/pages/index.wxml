@@ -1,15 +1,25 @@
 
-
-  <button bindtap="showDialog">标题+单行内容+取消按钮+确认按钮</button>
-  <wxc-dialog class="wxc-dialog" title="标题" content="告知当前状态，信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm" bindcancel="onCancel"/>
-
-  <view>
-    <block wx:for="{{components}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-      {{item.title}}
-      <block wx:for="{{item.list}}" wx:for-index="componentsindex" wx:for-item="component" wx:key="componentsindex">
-        <view bindtap="toComponent" data-wpytocomponent-a="{{component}}">
-          {{component}}
+  <veiw class="flex flex_column font_normal">
+    <view class="flex flex_column align_center">
+      <image class="index-logo" src="https://s10.mogucdn.com/mlcdn/c45406/171016_6d1e81fc4f85i4099hll34k8k2j77_356x356.png"/>
+      <view class="index-desc">基于规范的小程序组件库，简洁、易用、工具化</view>
+    </view>
+    <view class="flex flex_column margin_left margin_right margin_top">
+      <block wx:for="{{components}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="flex align_center justify_between line_main">
+          <view class="margin_left color_green">
+            <text>{{item.title}}</text>
+          </view>
+          <view>
+          </view>
+        </view>
+        <view class="flex flex_column">
+          <block wx:for="{{item.list}}" wx:for-index="componentsindex" wx:for-item="component" wx:key="componentsindex">
+            <view class="bg_white padding_line" bindtap="toComponent" data-wpytocomponent-a="{{component}}">
+              <text class="margin_left">{{component}}</text>
+            </view>
+          </block>
         </view>
       </block>
-    </block>
-  </view>
+    </view>
+  </veiw>

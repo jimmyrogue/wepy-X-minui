@@ -1,23 +1,51 @@
 <style lang="less">
+  .index-logo {
+    width: 100rpx;
+    height: 100rpx;
+  }
 
+  .index-desc {
+    margin-top: 20rpx;
+    color: #888888;
+    font-size: 28rpx;
+  }
+
+  .line_main {
+    background-color: white;
+    padding: 10px 0;
+  }
+
+  .padding_line {
+    padding: 5px 0;
+  }
 
 </style>
+
 <template>
-
-  <button bindtap="showDialog">标题+单行内容+取消按钮+确认按钮</button>
-  <wxc-dialog class="wxc-dialog" title="标题" content="告知当前状态，信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm"
-    bindcancel="onCancel"></wxc-dialog>
-
-  <view>
-    <repeat for="{{components}}" key="index" index="index" item="item">
-      {{item.title}}
-      <repeat for="{{item.list}}" key="componentsindex" index="componentsindex" item="component">
-        <view @tap="toComponent({{component}})">
-          {{component}}
+  <veiw class="flex flex_column font_normal">
+    <view class="flex flex_column align_center">
+      <image class="index-logo" src="https://s10.mogucdn.com/mlcdn/c45406/171016_6d1e81fc4f85i4099hll34k8k2j77_356x356.png"></image>
+      <view class="index-desc">基于规范的小程序组件库，简洁、易用、工具化</view>
+    </view>
+    <view class="flex flex_column margin_left margin_right margin_top">
+      <repeat for="{{components}}" key="index" index="index" item="item">
+        <view class="flex align_center justify_between line_main">
+          <view class="margin_left color_green">
+            <text>{{item.title}}</text>
+          </view>
+          <view>
+          </view>
+        </view>
+        <view class="flex flex_column">
+          <repeat for="{{item.list}}" key="componentsindex" index="componentsindex" item="component">
+            <view class="bg_white padding_line" @tap="toComponent({{component}})">
+              <text class="margin_left">{{component}}</text>
+            </view>
+          </repeat>
         </view>
       </repeat>
-    </repeat>
-  </view>
+    </view>
+  </veiw>
 </template>
 
 <script>
@@ -39,15 +67,9 @@
     methods = {
       toComponent(name) {
         this.$navigate(`./${name}/${name}`);
-      },
-      showDialog() {
-        let dialogComponent = this.$wxpage.selectComponent('.wxc-dialog')
-        dialogComponent && dialogComponent.show();
-      },
+      }
     }
-    onLoad() {
-      console.log('onLoad')
-    }
+    onLoad() {}
   }
 
 </script>

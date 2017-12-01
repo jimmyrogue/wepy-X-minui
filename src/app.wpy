@@ -19,6 +19,10 @@
     align-items: flex-end;
   }
 
+  .justify_between {
+    justify-content: space-between;
+  }
+
   .margin_top {
     margin-top: 15px;
   }
@@ -33,6 +37,18 @@
 
   .font_normal {
     font-size: 15px;
+  }
+
+  .bg_white {
+    background-color: white;
+  }
+
+  .color_green {
+    color: #28b1b0
+  }
+
+  Page {
+    background-color: #F8F8F8
   }
 
 </style>
