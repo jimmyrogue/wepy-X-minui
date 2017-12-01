@@ -1,0 +1,99 @@
+<style lang="less">
+  .avatar {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+
+  .avatar_word {
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background: #31b0d5;
+    color: #FFF;
+  }
+
+  .avatar__1 {
+    width: 120rpx;
+    height: 120rpx;
+  }
+
+  .avatar__2 {
+    width: 160rpx;
+    height: 160rpx;
+  }
+
+  .avatar__3 {
+    width: 200rpx;
+    height: 200rpx;
+  }
+
+</style>
+<template>
+  <view class="margin_left font_normal">
+    <view class="flex">
+      <view class="flex align_center flex_column">
+        <wxc-avatar class="avatar" src="https://s11.mogucdn.com/p2/170413/upload_86dkh4e886991g9lji7a6g5c530ji_400x400.jpg"></wxc-avatar>
+        <view class="margin_top">
+          <text>默认头像</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex align_center flex_column">
+        <wxc-avatar class="avatar margin_top" count="7" src="https://s11.mogucdn.com/p2/170413/upload_86dkh4e886991g9lji7a6g5c530ji_400x400.jpg"></wxc-avatar>
+        <view class="margin_top">
+          <text>消息提示</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex align_center flex_column">
+        <wxc-avatar class="avatar margin_top" mold="square" src="https://s11.mogucdn.com/p2/170413/upload_86dkh4e886991g9lji7a6g5c530ji_400x400.jpg"></wxc-avatar>
+        <view class="margin_top">
+          <text>方形头像</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex align_center flex_column">
+        <view class="flex align_end margin_top">
+          <wxc-avatar class="avatar avatar__1" src="https://s11.mogucdn.com/p2/170413/upload_86dkh4e886991g9lji7a6g5c530ji_400x400.jpg"></wxc-avatar>
+          <wxc-avatar class="avatar avatar__2 margin_left" src="https://s10.mogucdn.com/mlcdn/c45406/171116_3a30h33df8cj7f651al68hdh7bki7_528x528.png"></wxc-avatar>
+          <wxc-avatar class="avatar avatar__3 margin_left" src="https://s10.mogucdn.com/mlcdn/c45406/171116_62f571l0ki0ffcg94h6kg6452h497_356x356.png"></wxc-avatar>
+        </view>
+        <view class="margin_top">
+          <text>不同尺寸</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex align_center flex_column">
+        <wxc-avatar class="avatar_word margin_top">U</wxc-avatar>
+        <view class="margin_top">
+          <text>自定义文字</text>
+        </view>
+      </view>
+	</view>
+	<view style="height:30px;"></view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Avatar extends wepy.page {
+    config = {
+      navigationBarTitleText: 'avatar',
+      usingComponents: {
+        'wxc-avatar': '../../packages/@minui/wxc-avatar/dist/index'
+      }
+    }
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

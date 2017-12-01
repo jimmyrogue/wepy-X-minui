@@ -1,3 +1,11 @@
 
+
   <button bindtap="showDialog">标题+单行内容+取消按钮+确认按钮</button>
   <wxc-dialog class="wxc-dialog" title="标题" content="告知当前状态，信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm" bindcancel="onCancel"/>
+
+    <view>
+      基础元素
+      <view bindtap="toComponent" data-wpytocomponent-a="avatar">
+        avatar
+      </view>
+    </view>
