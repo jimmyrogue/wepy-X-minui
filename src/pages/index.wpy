@@ -1,4 +1,6 @@
 <style lang="less">
+
+
 </style>
 <template>
 
@@ -6,12 +8,16 @@
   <wxc-dialog class="wxc-dialog" title="标题" content="告知当前状态，信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm"
     bindcancel="onCancel"></wxc-dialog>
 
-    <view>
-      基础元素
-      <view @tap="toComponent(avatar)">
-        avatar
-      </view>
-    </view>
+  <view>
+    <repeat for="{{components}}" key="index" index="index" item="item">
+      {{item.title}}
+      <repeat for="{{item.list}}" key="componentsindex" index="componentsindex" item="component">
+        <view @tap="toComponent({{component}})">
+          {{component}}
+        </view>
+      </repeat>
+    </repeat>
+  </view>
 </template>
 
 <script>
@@ -23,6 +29,12 @@
       usingComponents: {
         'wxc-dialog': '../packages/@minui/wxc-dialog/dist/index'
       }
+    }
+    data = {
+      components: [{
+        title: '基础元件',
+        list: ['avatar', 'badge']
+      }]
     }
     methods = {
       toComponent(name) {

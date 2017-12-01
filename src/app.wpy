@@ -44,6 +44,7 @@
       pages: [
         'pages/index',
         'pages/avatar/avatar',
+        'pages/badge/badge',
       ],
       window: {
         backgroundTextStyle: 'light',

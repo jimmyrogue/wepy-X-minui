@@ -1,0 +1,58 @@
+
+  <view class="flex flex_column margin_left font_normal">
+    <view class="flex">
+      <view class="flex flex_column align_center">
+        <view class="user margin_top">
+          <image class="user__avatar" src="https://s10.mogucdn.com/mlcdn/c45406/171019_21c2fgdl406e80id5fa5hdckkh804_356x356.png"/>
+          <wxc-badge class="user__un-read-msg-count">9</wxc-badge>
+        </view>
+        <view>
+          <text>默认</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex flex_column align_center">
+        <view class="message margin_top">
+          <image class="message__avatar" src="https://s10.mogucdn.com/mlcdn/c45406/171019_7i7cf28a75h4jac3hidkc4c3j4e7i_200x200.png"/>
+          <wxc-badge class="message__badge" type="dot">30</wxc-badge>
+        </view>
+        <view>
+          <text>红点</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex flex_column">
+        <view class="user margin_top">
+          <image class="user__avatar" src="https://s10.mogucdn.com/mlcdn/c45406/171019_20e8ac6bcjb67f9i8b88j2aiiil03_200x200.jpg"/>
+          <wxc-badge class="user__un-read-msg-count" max="99" value="230"/>
+        </view>
+        <view>
+          <text>最大边界值</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex flex_column align_center">
+        <view class="message margin_top">
+          <image class="message__avatar" src="https://s10.mogucdn.com/mlcdn/c45406/171019_7i7cf28a75h4jac3hidkc4c3j4e7i_200x200.png"/>
+          <wxc-badge class="message__badge">new</wxc-badge>
+        </view>
+        <view>
+          <text>个性化</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="flex flex_column">
+        <view class="user margin_top">
+          <image class="user__avatar" src="https://s10.mogucdn.com/mlcdn/c45406/171019_21c2fgdl406e80id5fa5hdckkh804_356x356.png"/>
+          <wxc-badge class="user__un-read-msg-count" value="100"/>
+        </view>
+        <view>
+          <text>value传值</text>
+        </view>
+      </view>
+    </view>
+  </view>
