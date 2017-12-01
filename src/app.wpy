@@ -47,6 +47,10 @@
     color: #28b1b0
   }
 
+  .color_gray {
+    color: #888888;
+  }
+
   Page {
     background-color: #F8F8F8
   }

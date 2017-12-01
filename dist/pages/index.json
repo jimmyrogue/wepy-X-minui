@@ -1,1 +1,1 @@
-{"navigationBarTitleText":"wepy-X-minui","usingComponents":{"wxc-dialog":"../packages/@minui/wxc-dialog/dist/index"}}
+{"navigationBarTitleText":"wepy-X-minui","usingComponents":{"wxc-dialog":"../packages/@minui/wxc-dialog/dist/index","wxc-icon":"../packages/@minui/wxc-icon/dist/index"}}

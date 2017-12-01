@@ -15,8 +15,9 @@
         </view>
         <view class="flex flex_column">
           <block wx:for="{{item.list}}" wx:for-index="componentsindex" wx:for-item="component" wx:key="componentsindex">
-            <view class="bg_white padding_line" bindtap="toComponent" data-wpytocomponent-a="{{component}}">
+            <view class="flex justify_between bg_white padding_line" bindtap="toComponent" data-wpytocomponent-a="{{component}}">
               <text class="margin_left">{{component}}</text>
+              <wxc-icon size="25" type="arrow-right" class="margin_right color_gray"/>
             </view>
           </block>
         </view>
