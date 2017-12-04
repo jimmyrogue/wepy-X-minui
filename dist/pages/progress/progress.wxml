@@ -1,0 +1,49 @@
+
+  <view class="margin_left margin_right">
+    <view class="margin_top">
+      <wxc-progress percent="80"/>
+    </view>
+    <view class="margin_top">
+      <wxc-progress stroke-width="20"/>
+    </view>
+    <view class="margin_top">
+      <wxc-progress percent="80" active-color="#ac89ff"/>
+    </view>
+    <view class="margin_top">
+      <wxc-progress percent="80" active-color="#ac89ff,#ff76a2"/>
+    </view>
+  </view>
+
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top flex flex_full">
+        <wxc-progress percent="80"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top flex flex_full">
+        <wxc-progress class="flex flex_full" stroke-width="20"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+      </view>
+    </view>
+  </view>

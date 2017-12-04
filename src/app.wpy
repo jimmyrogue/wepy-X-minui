@@ -2,7 +2,9 @@
   .flex {
     display: flex;
   }
-
+  .flex_full {
+    flex: 1;
+  }
   .flex_column {
     flex-direction: column;
   }
@@ -72,6 +74,8 @@
         'pages/elip/elip',
         'pages/label/label',
         'pages/loadmore/loadmore',
+        'pages/price/price',
+        'pages/progress/progress',
       ],
       window: {
         backgroundTextStyle: 'light',

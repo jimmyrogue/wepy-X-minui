@@ -1,0 +1,38 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price>70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price status="del">70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price value="70.68" decimal="none"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price value="70.68" decimal="1"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="1" icon="sup">70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="1" icon="sub">70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="small" value="39.00"/>
+      </view>
+    </view>
+  </view>

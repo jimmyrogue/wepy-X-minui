@@ -1,0 +1,28 @@
+.price,
+  .price__icon,
+  .price__count {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .price__icon--sup,
+  .price__icon--sub {
+    font-size: 52%;
+  }
+
+  .price__icon--sup {
+    vertical-align: super;
+    line-height: 1.1;
+  }
+
+  .price__status--del .price__icon,
+  .price__status--del .price__count {
+    color: #999999;
+    font-weight: normal;
+    text-decoration: line-through;
+  }
+
+  .price__count__small-decimal {
+    display: inline;
+    font-size: 62%;
+  }

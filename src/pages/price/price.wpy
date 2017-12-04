@@ -1,0 +1,102 @@
+<style lang="less">
+  .user {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+
+  .user__avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .user__un-read-msg-count {
+    position: absolute;
+    top: -16rpx;
+    right: -8rpx;
+  }
+
+  .demo_text {
+    position: absolute;
+    bottom: -27px;
+    right: 9px;
+  }
+
+  .message {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+
+  .message__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .message__badge {
+    position: absolute;
+    top: -20rpx;
+    right: -2rpx;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price>70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price status="del">70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price value="70.68" decimal="none"></wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price value="70.68" decimal="1"></wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="1" icon="sup">70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="1" icon="sub">70.00</wxc-price>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="small" value="39.00"></wxc-price>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Price extends wepy.page {
+    config = {
+      navigationBarTitleText: 'price',
+      usingComponents: {
+        'wxc-price': '../../packages/@minui/wxc-price/dist/index',
+      }
+    }
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>
