@@ -35,4 +35,4 @@ $ min install @minui/wxc-loading
 
 4、在页面使用，this.$wxpage.selectComponent方法调用（详见index.wpy）
 
-<img src="https://ws2.sinaimg.cn/large/006tNc79gy1fm1eretkn9j30k20zkabp.jpg" width="30%" height="30%">
+<img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm4umu6lonj30jy0zitao.jpg" width="30%" height="30%">
