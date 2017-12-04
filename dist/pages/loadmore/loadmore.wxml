@@ -1,0 +1,28 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore is-end="true"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore is-end="true" text="没有更多"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore is-end="true" text="没有更多" icon="true"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore text="正在努力加载中..." icon="true"/>
+      </view>
+    </view>
+  </view>

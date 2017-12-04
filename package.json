@@ -17,6 +17,7 @@
     "@minui/wxc-elip": "^1.0.3",
     "@minui/wxc-icon": "^1.0.3",
     "@minui/wxc-label": "^1.0.3",
+    "@minui/wxc-loadmore": "^1.0.3",
     "wepy": "^1.6.0"
   },
   "devDependencies": {

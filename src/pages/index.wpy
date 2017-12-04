@@ -64,7 +64,7 @@
     data = {
       components: [{
         title: '基础元件',
-        list: ['avatar', 'badge', 'elip', 'label']
+        list: ['avatar', 'badge', 'elip', 'label', 'loadmore']
       }]
     }
     methods = {

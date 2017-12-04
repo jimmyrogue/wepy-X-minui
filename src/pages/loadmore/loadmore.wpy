@@ -1,0 +1,92 @@
+<style lang="less">
+  .user {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+
+  .user__avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .user__un-read-msg-count {
+    position: absolute;
+    top: -16rpx;
+    right: -8rpx;
+  }
+
+  .demo_text {
+    position: absolute;
+    bottom: -27px;
+    right: 9px;
+  }
+
+  .message {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+
+  .message__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .message__badge {
+    position: absolute;
+    top: -20rpx;
+    right: -2rpx;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore is-end="true"></wxc-loadmore>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore is-end="true" text="没有更多"></wxc-loadmore>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore is-end="true" text="没有更多" icon="true"></wxc-loadmore>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore></wxc-loadmore>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-loadmore text="正在努力加载中..." icon="true"></wxc-loadmore>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Loadmore extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Loadmore',
+      usingComponents: {
+        'wxc-loadmore': '../../packages/@minui/wxc-loadmore/dist/index',
+      }
+    }
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>
