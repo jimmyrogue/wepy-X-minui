@@ -1,0 +1,80 @@
+<style lang="less">
+  .user {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+
+  .user__avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .user__un-read-msg-count {
+    position: absolute;
+    top: -16rpx;
+    right: -8rpx;
+  }
+
+  .demo_text {
+    position: absolute;
+    bottom: -27px;
+    right: 9px;
+  }
+
+  .message {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+
+  .message__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .message__badge {
+    position: absolute;
+    top: -20rpx;
+    right: -2rpx;
+  }
+
+</style>
+<template>
+  <view class="margin_top margin_left margin_right font_normal">
+    <wxc-elip line="1">这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。</wxc-elip>
+  </view>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-elip line="1">flex内 wxc-elip 单行似乎无法正确使用flex内 wxc-elip 单行似乎无法正确使用</wxc-elip>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-elip line="2">这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。</wxc-elip>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Elip extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Elip',
+      usingComponents: {
+        'wxc-elip': '../../packages/@minui/wxc-elip/dist/index'
+      }
+    }
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

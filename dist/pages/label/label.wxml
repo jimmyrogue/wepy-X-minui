@@ -1,0 +1,21 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-label>双十一价</wxc-label>
+        <wxc-label class="margin_left">限时折扣</wxc-label>
+        <wxc-label class="margin_left">
+          <wxc-icon type="pintuan" size="20"/> 拼团秒杀
+        </wxc-label>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-label type="fill" type-color="#ffe8ee" text-color="#ff5577">双十一价</wxc-label>
+        <wxc-label type="fill" class="margin_left">限时折扣</wxc-label>
+        <wxc-label type="fill" class="margin_left">
+          <wxc-icon type="pintuan" size="20"/> 拼团秒杀
+        </wxc-label>
+      </view>
+    </view>
+  </view>

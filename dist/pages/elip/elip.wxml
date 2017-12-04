@@ -1,0 +1,16 @@
+
+  <view class="margin_top margin_left margin_right font_normal">
+    <wxc-elip line="1">这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。</wxc-elip>
+  </view>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-elip line="1">flex内 wxc-elip 单行似乎无法正确使用flex内 wxc-elip 单行似乎无法正确使用</wxc-elip>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-elip line="2">这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。这是一段单行截取的文字。</wxc-elip>
+      </view>
+    </view>
+  </view>

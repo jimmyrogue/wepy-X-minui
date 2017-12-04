@@ -1,0 +1,86 @@
+<style lang="less">
+  .user {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+
+  .user__avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .user__un-read-msg-count {
+    position: absolute;
+    top: -16rpx;
+    right: -8rpx;
+  }
+
+  .demo_text {
+    position: absolute;
+    bottom: -27px;
+    right: 9px;
+  }
+
+  .message {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+  }
+
+  .message__avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .message__badge {
+    position: absolute;
+    top: -20rpx;
+    right: -2rpx;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-label>双十一价</wxc-label>
+        <wxc-label class="margin_left">限时折扣</wxc-label>
+        <wxc-label class="margin_left">
+          <wxc-icon type="pintuan" size="20"></wxc-icon> 拼团秒杀
+        </wxc-label>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-label type="fill" type-color="#ffe8ee" text-color="#ff5577">双十一价</wxc-label>
+        <wxc-label type="fill" class="margin_left">限时折扣</wxc-label>
+        <wxc-label type="fill" class="margin_left">
+          <wxc-icon type="pintuan" size="20"></wxc-icon> 拼团秒杀
+        </wxc-label>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Label extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Label',
+      usingComponents: {
+        'wxc-label': '../../packages/@minui/wxc-label/dist/index',
+        'wxc-icon': '../../packages/@minui/wxc-icon/dist/index'
+      }
+    }
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

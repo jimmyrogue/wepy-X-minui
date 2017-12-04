@@ -65,6 +65,8 @@
         'pages/index',
         'pages/avatar/avatar',
         'pages/badge/badge',
+        'pages/elip/elip',
+        'pages/label/label',
       ],
       window: {
         backgroundTextStyle: 'light',
