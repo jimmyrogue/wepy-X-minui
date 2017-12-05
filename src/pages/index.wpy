@@ -68,7 +68,7 @@
         },
         {
           title: '提示反馈',
-          list: ['dialog', 'popup']
+          list: ['dialog', 'popup', 'toast']
         }
       ]
     }

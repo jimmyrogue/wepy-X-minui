@@ -1,0 +1,65 @@
+<style lang="less">
+
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showToast(0)">子元素传值</button>
+        <wxc-toast class="wxc-toast0">hello world</wxc-toast>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showToast(1)">长文案</button>
+        <wxc-toast class="wxc-toast1">当文案比较多的时候就需要换行显示了</wxc-toast>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showToast(2)">带icon</button>
+        <wxc-toast class="wxc-toast2" icon="yes">分享成功</wxc-toast>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showToast(3)">自定义icon</button>
+        <wxc-toast class="wxc-toast3" icon-image="https://s10.mogucdn.com//mlcdn/c45406/171017_885a650c746k7hajhf04aja566h1i_68x68.png"
+          text="分享成功"></wxc-toast>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showToast(4)">自定义颜色icon</button>
+        <wxc-toast class="wxc-toast4" icon="yes" icon-color="#ff5777">分享成功</wxc-toast>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Toast extends wepy.page {
+    config = {
+      navigationBarTitleText: 'toast',
+      usingComponents: {
+        'wxc-toast': '../../packages/@minui/wxc-toast/dist/index',
+      }
+    }
+    data = {
+      isShow: false
+    }
+    methods = {
+      showToast(index) {
+        let toastComponent = this.$wxpage.selectComponent('.wxc-toast' + index);
+        toastComponent && toastComponent.show();
+      }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

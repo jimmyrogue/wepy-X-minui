@@ -21,6 +21,7 @@
     "@minui/wxc-popup": "^1.0.3",
     "@minui/wxc-price": "^1.0.3",
     "@minui/wxc-progress": "^1.0.3",
+    "@minui/wxc-toast": "^1.0.3",
     "wepy": "^1.6.0"
   },
   "devDependencies": {
