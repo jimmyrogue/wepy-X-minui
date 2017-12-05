@@ -59,7 +59,6 @@
     </view>
   </view>
 
-
   <view class="flex flex_column margin_left margin_right font_normal">
     <view class="flex align_center justify_center">
       <view class="margin_top flex flex_full">

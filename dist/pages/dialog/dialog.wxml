@@ -1,0 +1,46 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showDialog" data-wpyshowdialog-a="0">单行内容</button>
+        <wxc-dialog class="wxc-dialog0" title="标题" content="高柱当前状态、信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm" bindcancel="onCancel" data-wpyoncancel-a="0"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showDialog" data-wpyshowdialog-a="1">额外内容</button>
+        <wxc-dialog class="wxc-dialog1" title="标题" content="高柱当前状态、信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" bindconfirm="onConfirm" bindcancel="onCancel" data-wpyoncancel-a="1">
+          <input class="input" type="text" placeholder="填写备注"/>
+        </wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showDialog" data-wpyshowdialog-a="2">无取消按钮</button>
+        <wxc-dialog class="wxc-dialog2" title="标题" content="高柱当前状态、信息和解决方法" confirm-text="主操作" bindconfirm="onConfirm"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showDialog" data-wpyshowdialog-a="3">带图片</button>
+        <wxc-dialog class="wxc-dialog3" title="标题" content="描述内容，最好不超过一行" confirm-text="知道了" image="http://s2.mogucdn.com/b7/pic/141204/icfa_ieydsntfgu3taytfmqytambqgiyde_640x960.jpg_468x468.jpg" bindconfirm="onConfirm" bindcancel="onCancel"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showDialog" data-wpyshowdialog-a="4">多行文字</button>
+        <wxc-dialog class="wxc-dialog4" title="标题" content="多行文字内容显示多行文字内容显示多行文字内容显示多行" confirm-text="知道了" bindconfirm="onConfirm" bindcancel="onCancel"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showDialog" data-wpyshowdialog-a="5">自定义颜色</button>
+        <wxc-dialog class="wxc-dialog5" content-color="#353535" content="多行文字内容显示多行文字内容显示多行文字内容显示多行" confirm-text="知道了" bindconfirm="onConfirm" bindcancel="onCancel"/>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="small" value="39.00"/>
+      </view>
+    </view>
+  </view>

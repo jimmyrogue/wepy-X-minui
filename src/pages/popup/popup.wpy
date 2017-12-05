@@ -1,0 +1,106 @@
+<style lang="less">
+  .popup__content {
+    width: 300rpx;
+    height: 300rpx;
+    line-height: 300rpx;
+    background: #FFFFFF;
+    border-radius: 12rpx;
+    text-align: center;
+  }
+
+  .popup__content_full {
+    width: 100%;
+    height: 200rpx;
+    line-height: 200rpx;
+    text-align: center;
+    background: #FFFFFF;
+  }
+
+  .popup__content_side {
+    width: 300rpx;
+    height: 100%;
+    line-height: 400rpx;
+    background: #ffffff;
+    text-align: center;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showpopup(0)">居中无动画</button>
+        <wxc-popup class="wxc-popup0">
+          <view class="popup__content">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showpopup(1)">居中有动画</button>
+        <wxc-popup animation-mode="center" align="center" class="wxc-popup1">
+          <view class="popup__content">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showpopup(2)">居上有动画</button>
+        <wxc-popup animation-mode="top" align="top" class="wxc-popup2">
+          <view class="popup__content_full">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showpopup(3)">居下有动画</button>
+        <wxc-popup animation-mode="bottom" align="bottom" class="wxc-popup3">
+          <view class="popup__content_full">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showpopup(4)">居左有动画</button>
+        <wxc-popup animation-mode="left" align="left" class="wxc-popup4">
+          <view class="popup__content_side">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showpopup(5)">居右有动画</button>
+        <wxc-popup animation-mode="right" align="right" class="wxc-popup5">
+          <view class="popup__content_side">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Popup extends wepy.page {
+    config = {
+      navigationBarTitleText: 'popup',
+      usingComponents: {
+        'wxc-popup': '../../packages/@minui/wxc-popup/dist/index',
+      }
+    }
+    methods = {
+      showpopup(index) {
+        let popupComponent = this.$wxpage.selectComponent('.wxc-popup' + index);
+        popupComponent && popupComponent.show();
+      },
+      onCancel(index) {
+        let popupComponent = this.$wxpage.selectComponent('.wxc-popup' + index);
+        popupComponent && popupComponent.hide();
+      }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

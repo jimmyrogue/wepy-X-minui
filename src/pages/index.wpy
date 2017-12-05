@@ -30,7 +30,7 @@
     </view>
     <view class="flex flex_column margin_left margin_right margin_top">
       <repeat for="{{components}}" key="index" index="index" item="item">
-        <view class="flex align_center justify_between line_main">
+        <view class="flex align_center justify_between line_main margin_top">
           <view class="margin_left color_green">
             <text>{{item.title}}</text>
           </view>
@@ -63,9 +63,14 @@
     }
     data = {
       components: [{
-        title: '基础元件',
-        list: ['avatar', 'badge', 'elip', 'label', 'loadmore', 'price', 'progress']
-      }]
+          title: '基础元件',
+          list: ['avatar', 'badge', 'elip', 'label', 'loadmore', 'price', 'progress']
+        },
+        {
+          title: '提示反馈',
+          list: ['dialog', 'popup']
+        }
+      ]
     }
     methods = {
       toComponent(name) {

@@ -76,6 +76,8 @@
         'pages/loadmore/loadmore',
         'pages/price/price',
         'pages/progress/progress',
+        'pages/dialog/dialog',
+        'pages/popup/popup',
       ],
       window: {
         backgroundTextStyle: 'light',

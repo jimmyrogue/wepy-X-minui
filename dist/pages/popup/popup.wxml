@@ -1,0 +1,51 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showpopup" data-wpyshowpopup-a="0">居中无动画</button>
+        <wxc-popup class="wxc-popup0">
+          <view class="popup__content">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showpopup" data-wpyshowpopup-a="1">居中有动画</button>
+        <wxc-popup animation-mode="center" align="center" class="wxc-popup1">
+          <view class="popup__content">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showpopup" data-wpyshowpopup-a="2">居上有动画</button>
+        <wxc-popup animation-mode="top" align="top" class="wxc-popup2">
+          <view class="popup__content_full">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showpopup" data-wpyshowpopup-a="3">居下有动画</button>
+        <wxc-popup animation-mode="bottom" align="bottom" class="wxc-popup3">
+          <view class="popup__content_full">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showpopup" data-wpyshowpopup-a="4">居左有动画</button>
+        <wxc-popup animation-mode="left" align="left" class="wxc-popup4">
+          <view class="popup__content_side">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button bindtap="showpopup" data-wpyshowpopup-a="5">居右有动画</button>
+        <wxc-popup animation-mode="right" align="right" class="wxc-popup5">
+          <view class="popup__content_side">Hello World</view>
+        </wxc-popup>
+      </view>
+    </view>
+  </view>

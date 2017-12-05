@@ -1,0 +1,87 @@
+<style lang="less">
+  .input {
+    border: 1px solid #cccccc;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showDialog(0)">单行内容</button>
+        <wxc-dialog class="wxc-dialog0" title="标题" content="高柱当前状态、信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" @confirm="onConfirm"
+          @cancel="onCancel(0)"></wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showDialog(1)">额外内容</button>
+        <wxc-dialog class="wxc-dialog1" title="标题" content="高柱当前状态、信息和解决方法" confirm-text="主操作" cancel-text="辅助操作" @confirm="onConfirm"
+          @cancel="onCancel(1)">
+          <input class="input" type="text" placeholder="填写备注" />
+        </wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showDialog(2)">无取消按钮</button>
+        <wxc-dialog class="wxc-dialog2" title="标题" content="高柱当前状态、信息和解决方法" confirm-text="主操作" @confirm="onConfirm"></wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showDialog(3)">带图片</button>
+        <wxc-dialog class="wxc-dialog3" title="标题" content="描述内容，最好不超过一行" confirm-text="知道了" image="http://s2.mogucdn.com/b7/pic/141204/icfa_ieydsntfgu3taytfmqytambqgiyde_640x960.jpg_468x468.jpg"
+          bindconfirm="onConfirm" bindcancel="onCancel"></wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showDialog(4)">多行文字</button>
+        <wxc-dialog class="wxc-dialog4" title="标题" content="多行文字内容显示多行文字内容显示多行文字内容显示多行" confirm-text="知道了" bindconfirm="onConfirm"
+          bindcancel="onCancel"></wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <button @tap="showDialog(5)">自定义颜色</button>
+        <wxc-dialog class="wxc-dialog5" content-color="#353535" content="多行文字内容显示多行文字内容显示多行文字内容显示多行" confirm-text="知道了" bindconfirm="onConfirm"
+          bindcancel="onCancel"></wxc-dialog>
+      </view>
+    </view>
+    <view class="flex align_center justify_center">
+      <view class="margin_top">
+        <wxc-price decimal="small" value="39.00"></wxc-price>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Dialog extends wepy.page {
+    config = {
+      navigationBarTitleText: 'dialog',
+      usingComponents: {
+        'wxc-dialog': '../../packages/@minui/wxc-dialog/dist/index',
+      }
+    }
+    methods = {
+      showDialog(index) {
+        let dialogComponent = this.$wxpage.selectComponent('.wxc-dialog' + index);
+        dialogComponent && dialogComponent.show();
+      },
+      onCancel(index) {
+        let dialogComponent = this.$wxpage.selectComponent('.wxc-dialog' + index);
+        dialogComponent && dialogComponent.hide();
+      }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

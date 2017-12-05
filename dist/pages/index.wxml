@@ -7,7 +7,7 @@
     </view>
     <view class="flex flex_column margin_left margin_right margin_top">
       <block wx:for="{{components}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-        <view class="flex align_center justify_between line_main">
+        <view class="flex align_center justify_between line_main margin_top">
           <view class="margin_left color_green">
             <text>{{item.title}}</text>
           </view>
