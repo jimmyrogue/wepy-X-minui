@@ -65,6 +65,9 @@
       components: [{
           title: '基础元件',
           list: ['avatar', 'badge', 'elip', 'label', 'loadmore', 'price', 'progress']
+        }, {
+          title: '功能组件',
+          list: ['abnor', 'countdown', 'counter', 'loading', 'mask', 'steps', 'tab']
         },
         {
           title: '提示反馈',

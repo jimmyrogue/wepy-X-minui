@@ -1,0 +1,53 @@
+<style lang="less">
+
+
+</style>
+<template>
+  <wxc-tab bind:tabchange="onClick" default-index="0" component-id="c4">
+    <repeat for="{{tabs}}" key="index" index="index" item="tab">
+      <wxc-tab-panel tab-index="{{index}}" component-id="c4" label="{{tab.title}}">
+        {{index}}{{tab.content}}
+      </wxc-tab-panel>
+    </repeat>
+
+    </view>
+  </wxc-tab>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Tab extends wepy.page {
+    config = {
+      navigationBarTitleText: 'tab',
+      usingComponents: {
+        'wxc-tab': '../../packages/@minui/wxc-tab/dist/index',
+        'wxc-tab-panel': '../../packages/@minui/wxc-tab/dist/index'
+      }
+    }
+    data = {
+      tabs: [{
+          title: '选项一',
+          content: '内容一'
+        },
+        {
+          title: '选项二',
+          content: '内容二'
+        },
+        {
+          title: '选项三',
+          content: '内容三'
+        }
+      ]
+    }
+    methods = {
+      onClick: function (e) {
+        console.log(`ComponentId:${e.detail.componentId},you selected:${e.detail.key}`);
+      }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

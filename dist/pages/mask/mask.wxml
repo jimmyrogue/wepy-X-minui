@@ -1,0 +1,47 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[0]}}"/>
+        <button bindtap="showMask" data-wpyshowmask-a="0">显示遮罩</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[1]}}" opacity="0.3"/>
+        <button bindtap="showMask" data-wpyshowmask-a="1">自定义透明度</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[2]}}" color="#ff5577"/>
+        <button bindtap="showMask" data-wpyshowmask-a="2">自定义背景颜色</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[3]}}">
+          <view class="mask-demo_content">我是一个子节点</view>
+        </wxc-mask>
+        <button bindtap="showMask" data-wpyshowmask-a="3">子节点</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[4]}}" content-align="bl">
+          <view class="mask-demo_content">我是一个子节点</view>
+        </wxc-mask>
+        <button bindtap="showMask" data-wpyshowmask-a="4">子节点定位</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[5]}}" locked="true">
+          <view class="mask-demo_content2">
+            <button bindtap="hideMask">点击我关闭</button>
+          </view>
+        </wxc-mask>
+        <button bindtap="showMask" data-wpyshowmask-a="5">锁定的遮罩</button>
+      </view>
+    </view>
+  </view>

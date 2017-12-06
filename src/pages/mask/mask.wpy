@@ -1,0 +1,100 @@
+<style lang="less">
+  .mask-demo_content {
+    width: 350 rpx;
+    padding: 20 rpx;
+    background: #FFF;
+    color: #000;
+  }
+
+  .mask-demo_content2 {
+    width: 350rpx;
+    margin: 400rpx 0 0 180rpx;
+    padding: 20rpx;
+    background: #FFF;
+    color: #000;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[0]}}"></wxc-mask>
+        <button @tap="showMask(0)">显示遮罩</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[1]}}" opacity="0.3"></wxc-mask>
+        <button @tap="showMask(1)">自定义透明度</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[2]}}" color="#ff5577"></wxc-mask>
+        <button @tap="showMask(2)">自定义背景颜色</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[3]}}">
+          <view class="mask-demo_content">我是一个子节点</view>
+        </wxc-mask>
+        <button @tap="showMask(3)">子节点</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[4]}}" content-align="bl">
+          <view class="mask-demo_content">我是一个子节点</view>
+        </wxc-mask>
+        <button @tap="showMask(4)">子节点定位</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-mask status="{{maskStatus[5]}}" locked="true">
+          <view class="mask-demo_content2">
+            <button bindtap="hideMask">点击我关闭</button>
+          </view>
+        </wxc-mask>
+        <button @tap="showMask(5)">锁定的遮罩</button>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Mask extends wepy.page {
+    config = {
+      navigationBarTitleText: 'mask',
+      usingComponents: {
+        'wxc-mask': '../../packages/@minui/wxc-mask/dist/index'
+      }
+    }
+    data = {
+      maskStatus: {
+        0: 'hide',
+        1: 'hide',
+        2: 'hide',
+        3: 'hide',
+        4: 'hide',
+        5: 'hide',
+      }
+    }
+    methods = {
+      showMask(index) {
+        this.maskStatus[index] = 'show';
+      },
+	  hideMask() {
+		this.maskStatus[5] = 'hide';
+	  }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

@@ -1,0 +1,49 @@
+<style lang="less">
+  .demo-text {
+    display: flex;
+  }
+
+  .demo-text--end {
+    padding-left: 20rpx;
+    color: #f5456e
+  }
+
+</style>
+<template>
+  <view class="margin_left margin_right font_normal">
+    <view class="margin_top">
+      <wxc-steps steps="{{steps}}" current="{{current}}"></wxc-steps>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Steps extends wepy.page {
+    config = {
+      navigationBarTitleText: 'steps',
+      usingComponents: {
+        'wxc-steps': '../../packages/@minui/wxc-steps/dist/index'
+      }
+    }
+    data = {
+      steps: [{
+        title: '步骤1',
+        desc: '注册，登录'
+      }, {
+        title: '步骤2',
+        desc: '进入详情页，点击立即购买'
+      }, {
+        title: '步骤3',
+        desc: '支付成功'
+      }],
+      current: 1
+    }
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

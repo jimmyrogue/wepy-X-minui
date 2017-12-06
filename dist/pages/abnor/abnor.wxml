@@ -1,0 +1,16 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <wxc-abnor type="REQUEST_ERROR"/>
+    <wxc-abnor type="NOT_FOUND"/>
+	<wxc-abnor type="REQUEST_ERROR" image="{{image}}" title="{{title}}" tip="{{tip}}" button="{{button}}"  bind:abnortap="onAbnorTap"/>
+	<wxc-abnor type="DATA"/>
+	<wxc-abnor type="FOLLOW"/>
+	<wxc-abnor type="FEED"/>
+	<wxc-abnor type="SHOP"/>
+	<wxc-abnor type="SEARCH"/>
+	<wxc-abnor type="MESSAGE"/>
+	<wxc-abnor type="ORDER"/>
+	<wxc-abnor type="CART"/>
+	<wxc-abnor type="FOOTPRINT"/>
+	<wxc-abnor type="COUPON"/>
+  </view>

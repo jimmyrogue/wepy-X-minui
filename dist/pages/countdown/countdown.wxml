@@ -1,0 +1,32 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-countdown countdown="{{countdown}}"/>
+        <text>基础调用</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-countdown countdown="{{countdown}}" format="{{format}}"/>
+        <text>格式化</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-countdown countdown="{{countdown}}" num-style="{{numStyle}}" symbol-style="{{symbolStyle}}"/>
+        <text>自定义样式</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <view class="demo-text">
+          <view>倒计时还剩{{computeTime}}秒</view>
+          <view  wx:if="{{isEnd}}" class="demo-text--end">倒计时结束啦</view>
+        </view>
+        <button size="mini" type="{{isEnd ? 'primary' : 'default'}}" bindtap="countAgain">再来一次</button>
+        <wxc-countdown countdown="{{countdown2}}"  bind:runcount="onRunCount" bind:endcount="onEndCount"/>
+      </view>
+    </view>
+
+  </view>

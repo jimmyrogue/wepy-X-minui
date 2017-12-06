@@ -1,0 +1,86 @@
+<style lang="less">
+  .demo-text {
+    display: flex;
+  }
+
+  .demo-text--end {
+    padding-left: 20rpx;
+    color: #f5456e
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-countdown countdown="{{countdown}}"></wxc-countdown>
+        <text>基础调用</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-countdown countdown="{{countdown}}" format="{{format}}"></wxc-countdown>
+        <text>格式化</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-countdown countdown="{{countdown}}" num-style="{{numStyle}}" symbol-style="{{symbolStyle}}"></wxc-countdown>
+        <text>自定义样式</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <view class="demo-text">
+          <view>倒计时还剩{{computeTime}}秒</view>
+          <view wx:if="{{isEnd}}" class="demo-text--end">倒计时结束啦</view>
+        </view>
+        <button size="mini" type="{{isEnd ? 'primary' : 'default'}}" bindtap="countAgain">再来一次</button>
+        <wxc-countdown countdown="{{countdown2}}" bind:runcount="onRunCount" bind:endcount="onEndCount"></wxc-countdown>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Countdow extends wepy.page {
+    config = {
+      navigationBarTitleText: 'countdown',
+      usingComponents: {
+        'wxc-countdown': '../../packages/@minui/wxc-countdown/dist/index'
+      }
+    }
+    data = {
+      countdown: 10000,
+      format: 'hh:mm:ss',
+      countdown2: 5,
+      computeTime: 5,
+      isEnd: false,
+      numStyle: 'width: 48rpx; font-size: 28rpx; color: #ffffff; background: #000; text-align: center; border-radius: 8rpx; padding: 5rpx 0;',
+      symbolStyle: 'font-size: 28rpx; color: #000; padding: 0 12rpx;'
+    }
+    methods = {
+      onRunCount(e) {
+        let detail = e.detail
+        this.computeTime = detail.computeTime
+      },
+      onEndCount() {
+        this.isEnd = true;
+      },
+      countAgain() {
+        let countdown = this.countdown2 + 1
+        if (this.isEnd) {
+          this.countdown2 = countdown;
+          this.isEnd = false;
+        }
+      }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

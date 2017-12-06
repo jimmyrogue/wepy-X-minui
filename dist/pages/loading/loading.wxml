@@ -1,0 +1,15 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-loading class="wxc-loading0" type="mall"/>
+        <button bindtap="showLoading" data-wpyshowloading-a="0">设置type</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-loading class="wxc-loading1" image="https://s10.mogucdn.com/mlcdn/c45406/170607_5241335cb37ka3ab7781ddh504ggh_200x200.png" slip="http://s10.mogucdn.com/p1/160715/upload_ifrgmmzwmyydknldhezdambqmeyde_200x200.png"/>
+        <button bindtap="showLoading" data-wpyshowloading-a="1">自定义图片</button>
+      </view>
+    </view>
+  </view>

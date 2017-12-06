@@ -1,0 +1,77 @@
+<style lang="less">
+  .popup__content {
+    width: 300rpx;
+    height: 300rpx;
+    line-height: 300rpx;
+    background: #FFFFFF;
+    border-radius: 12rpx;
+    text-align: center;
+  }
+
+  .popup__content_full {
+    width: 100%;
+    height: 200rpx;
+    line-height: 200rpx;
+    text-align: center;
+    background: #FFFFFF;
+  }
+
+  .popup__content_side {
+    width: 300rpx;
+    height: 100%;
+    line-height: 400rpx;
+    background: #ffffff;
+    text-align: center;
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <wxc-abnor type="REQUEST_ERROR"></wxc-abnor>
+    <wxc-abnor type="NOT_FOUND"></wxc-abnor>
+	<wxc-abnor type="REQUEST_ERROR" image="{{image}}" title="{{title}}" tip="{{tip}}" button="{{button}}" bind:abnortap="onAbnorTap"></wxc-abnor>
+	<wxc-abnor type="DATA"></wxc-abnor>
+	<wxc-abnor type="FOLLOW"></wxc-abnor>
+	<wxc-abnor type="FEED"></wxc-abnor>
+	<wxc-abnor type="SHOP"></wxc-abnor>
+	<wxc-abnor type="SEARCH"></wxc-abnor>
+	<wxc-abnor type="MESSAGE"></wxc-abnor>
+	<wxc-abnor type="ORDER"></wxc-abnor>
+	<wxc-abnor type="CART"></wxc-abnor>
+	<wxc-abnor type="FOOTPRINT"></wxc-abnor>
+	<wxc-abnor type="COUPON"></wxc-abnor>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Abnor extends wepy.page {
+    config = {
+      navigationBarTitleText: 'abnor',
+      usingComponents: {
+        'wxc-abnor': '../../packages/@minui/wxc-abnor/dist/index',
+      }
+    }
+    data = {
+      image: 'https://s10.mogucdn.com/p2/161213/upload_76h1c5hjc8heecjehlfgekjdl2ki0_514x260.png',
+      title: '自定义标题',
+      tip: '自定义副标题',
+      button: '点我'
+    }
+    methods = {
+      showpopup(index) {
+        let popupComponent = this.$wxpage.selectComponent('.wxc-popup' + index);
+        popupComponent && popupComponent.show();
+      },
+      onCancel(index) {
+        let popupComponent = this.$wxpage.selectComponent('.wxc-popup' + index);
+        popupComponent && popupComponent.hide();
+      }
+    }
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>

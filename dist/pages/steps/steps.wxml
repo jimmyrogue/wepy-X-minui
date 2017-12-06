@@ -1,0 +1,6 @@
+
+  <view class="margin_left margin_right font_normal">
+    <view class="margin_top">
+      <wxc-steps steps="{{steps}}" current="{{current}}"/>
+    </view>
+  </view>

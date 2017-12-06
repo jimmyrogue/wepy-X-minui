@@ -1,0 +1,28 @@
+
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="111" max="10000" min="1"/>
+        <text>默认</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="111" max="10000" min="1" disabled="true"/>
+        <text>不可更改</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="5" max="5" min="1"/>
+        <text>最大值</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="1" max="5" min="1"/>
+        <text>最小值</text>
+      </view>
+    </view>
+
+  </view>

@@ -1,0 +1,59 @@
+<style lang="less">
+  .demo-text {
+    display: flex;
+  }
+
+  .demo-text--end {
+    padding-left: 20rpx;
+    color: #f5456e
+  }
+
+</style>
+<template>
+  <view class="flex flex_column margin_left margin_right font_normal">
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="111" max="10000" min="1"></wxc-counter>
+        <text>默认</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="111" max="10000" min="1" disabled="true"></wxc-counter>
+        <text>不可更改</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="5" max="5" min="1"></wxc-counter>
+        <text>最大值</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="margin_top">
+        <wxc-counter number="1" max="5" min="1"></wxc-counter>
+        <text>最小值</text>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Counter extends wepy.page {
+    config = {
+      navigationBarTitleText: 'counter',
+      usingComponents: {
+        'wxc-counter': '../../packages/@minui/wxc-counter/dist/index'
+      }
+    }
+    data = {}
+    methods = {}
+    onLoad() {
+      console.log('onLoad')
+    }
+  }
+
+</script>
