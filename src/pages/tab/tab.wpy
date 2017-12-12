@@ -3,14 +3,12 @@
 
 </style>
 <template>
-  <wxc-tab bind:tabchange="onClick" default-index="0" component-id="c4">
-    <repeat for="{{tabs}}" key="index" index="index" item="tab">
-      <wxc-tab-panel tab-index="{{index}}" component-id="c4" label="{{tab.title}}">
-        {{index}}{{tab.content}}
-      </wxc-tab-panel>
-    </repeat>
-
+  <wxc-tab bind:tabchange="onClick" default-index="{{0}}" component-id="c4">
+    <wxc-tab-panel wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}" tab-index="{{index}}" component-id="c4" label="{{tab.title}}">
+      {{tab.content}}
+    </wxc-tab-panel>
     </view>
+
   </wxc-tab>
 </template>
 
@@ -22,7 +20,7 @@
       navigationBarTitleText: 'tab',
       usingComponents: {
         'wxc-tab': '../../packages/@minui/wxc-tab/dist/index',
-        'wxc-tab-panel': '../../packages/@minui/wxc-tab/dist/index'
+        'wxc-tab-panel': '../../packages/@minui/wxc-tab/dist/panel'
       }
     }
     data = {

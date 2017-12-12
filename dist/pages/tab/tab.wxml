@@ -1,10 +1,8 @@
 
-  <wxc-tab  bind:tabchange="onClick" default-index="0" component-id="c4">
-    <block wx:for="{{tabs}}" wx:for-index="index" wx:for-item="tab" wx:key="index">
-      <wxc-tab-panel tab-index="{{index}}" component-id="c4" label="{{tab.title}}">
-        {{index}}{{tab.content}}
-      </wxc-tab-panel>
-    </block>
-
+  <wxc-tab  bind:tabchange="onClick" default-index="{{0}}" component-id="c4">
+    <wxc-tab-panel  wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.content}}" tab-index="{{index}}" component-id="c4" label="{{tab.title}}">
+      {{tab.content}}
+    </wxc-tab-panel>
     
+
   </wxc-tab>
