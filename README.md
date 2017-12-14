@@ -2,7 +2,7 @@
 wepy with minui
 本项目仅供参考，如有疑问欢迎提issue，我会尽力解决。
 
-## min-cli 1.0.4, wepy 1.6.0
+## min-cli 1.0.5-beta1, wepy 1.6.0
 
 ## 使用方法
 
@@ -21,7 +21,7 @@ wepy build -w
 4、开始体验吧。
 
 
-### 如何在已有的wepy项目中使用minui？
+## 如何在已有的wepy项目中使用minui？
 
 1、新建wepy项目（如果已有项目，则跳过）
 
