@@ -2,9 +2,9 @@
 wepy with minui
 本项目仅供参考，如有疑问欢迎提issue，我会尽力解决。
 
-#min-cli 1.0.4, wepy 1.6.0
+## min-cli 1.0.4, wepy 1.6.0
 
-使用方法
+## 使用方法
 
 1、clone本项目
 
@@ -19,7 +19,7 @@ wepy build -w
 3、新建小程序，将目录指向dist目录
 
 
-如何新建或在已有的wepy项目中使用minui？
+### 如何在已有的wepy项目中使用minui？
 
 1、新建wepy项目
 
