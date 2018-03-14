@@ -2,7 +2,7 @@
 wepy with minui
 本项目仅供参考，如有疑问欢迎提issue，我会尽力解决。
 
-## min-cli 1.0.5-beta1, wepy 1.6.0
+## min-cli 1.0.7-beta.3, wepy 1.6.1-alpha7
 
 ## 使用方法
 
@@ -52,6 +52,6 @@ wepy build -w
 $ min install @minui/wxc-loading
 ```
 
-4、在页面使用，this.$wxpage.selectComponent方法调用（详见index.wpy 以及 ![minui框架主页](https://github.com/meili/minui)）
+4、在页面使用，this.$wxpage.selectComponent方法调用（详见index.wpy 以及 ![minui框架主页](https://github.com/meili/minui))
 
 <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm6xmveiqmj30k00zo76h.jpg" width="30%" height="30%">
