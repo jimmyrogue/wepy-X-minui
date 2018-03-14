@@ -223,14 +223,13 @@ var _class = function () {
             var coms = Object.getOwnPropertyNames(this.$com);
             if (coms.length) {
                 coms.forEach(function (name) {
-                    _this2.$com[name].$init(_this2.getWxPage(), $root, _this2);
-                    _this2.$com[name].onLoad && _this2.$com[name].onLoad();
+                    var com = _this2.$com[name];
+                    com.$init(_this2.getWxPage(), $root, _this2);
 
-                    _this2.$com[name].$mixins.forEach(function (mix) {
-                        mix['onLoad'] && mix['onLoad'].call(_this2.$com[name]);
+                    [].concat(com.$mixins, com).forEach(function (mix) {
+                        mix['onLoad'] && mix['onLoad'].call(com);
                     });
-
-                    _this2.$com[name].$apply();
+                    com.$apply();
                 });
             }
         }
@@ -272,11 +271,20 @@ var _class = function () {
             }
             var t = null,
                 reg = new RegExp('^' + this.$prefix.replace(/\$/g, '\\$'), 'ig');
+
             for (t in k) {
                 var noPrefix = t.replace(reg, '');
                 this.$data[noPrefix] = _util2.default.$copy(k[t], true);
+
+                if (k[t] === undefined) {
+                    delete k[t];
+                }
             }
-            return this.$wxpage.setData(k);
+
+            if (typeof v === 'function') {
+                return this.$root.$wxpage.setData(k, v);
+            }
+            return this.$root.$wxpage.setData(k);
         }
     }, {
         key: 'getWxPage',
@@ -576,7 +584,12 @@ var _class = function () {
             var k = void 0;
             var originData = this.$data;
             this.$$phase = '$digest';
+            this.$$dc = 0;
             while (this.$$phase) {
+                this.$$dc++;
+                if (this.$$dc >= 3) {
+                    throw new Error('Can not call $apply in $apply process');
+                }
                 var readyToSet = {};
                 if (this.computed) {
                     for (k in this.computed) {
@@ -628,10 +641,45 @@ var _class = function () {
                     }
                 }
                 if (Object.keys(readyToSet).length) {
-                    this.setData(readyToSet);
+                    this.setData(readyToSet, function () {
+                        if (_this9.$$nextTick) {
+                            var $$nextTick = _this9.$$nextTick;
+                            _this9.$$nextTick = null;
+                            if ($$nextTick.promise) {
+                                $$nextTick();
+                            } else {
+                                $$nextTick.call(_this9);
+                            }
+                        }
+                    });
+                } else {
+                    if (this.$$nextTick) {
+                        var $$nextTick = this.$$nextTick;
+                        this.$$nextTick = null;
+                        if ($$nextTick.promise) {
+                            $$nextTick();
+                        } else {
+                            $$nextTick.call(this);
+                        }
+                    }
                 }
                 this.$$phase = this.$$phase === '$apply' ? '$digest' : false;
             }
+        }
+    }, {
+        key: '$nextTick',
+        value: function $nextTick(fn) {
+            var _this10 = this;
+
+            if (typeof fn === 'undefined') {
+                return new Promise(function (resolve, reject) {
+                    _this10.$$nextTick = function () {
+                        resolve();
+                    };
+                    _this10.$$nextTick.promise = true;
+                });
+            }
+            this.$$nextTick = fn;
         }
     }]);
 

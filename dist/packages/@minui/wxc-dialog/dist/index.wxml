@@ -1,4 +1,4 @@
-<wxc-popup animation-mode="none" align="center" class="popup" _pid="{{_pid}}">
+<wxc-popup animation-mode="none" align="center" locked="true" class="popup" _pid="{{_pid}}">
     <view class="dialog" catchtap="onContentTap">
         <view class="dialog__title" wx:if="{{title}}" style="color: {{titleColor}}">{{title}}</view>
         <view class="dialog__content">

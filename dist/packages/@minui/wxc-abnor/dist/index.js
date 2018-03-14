@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _config = require('./config');
+var _config = require('./config.js');
 
 var _config2 = _interopRequireDefault(_config);
 

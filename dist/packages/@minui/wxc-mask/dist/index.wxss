@@ -3,8 +3,7 @@
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 100000
+    left: 0
 }
 .mask__bg {
     width: 100%;

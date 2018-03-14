@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Event = require('./Event');
+var _Event = require('./Event.js');
 
 var _Event2 = _interopRequireDefault(_Event);
 

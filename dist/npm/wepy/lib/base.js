@@ -14,7 +14,7 @@ var _util2 = _interopRequireDefault(_util);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PAGE_EVENT = ['onLoad', 'onReady', 'onShow', 'onHide', 'onUnload', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage'];
+var PAGE_EVENT = ['onLoad', 'onReady', 'onShow', 'onHide', 'onUnload', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap'];
 var APP_EVENT = ['onLaunch', 'onShow', 'onHide', 'onError'];
 
 var $bindEvt = function $bindEvt(config, com, prefix) {
@@ -107,6 +107,7 @@ exports.default = {
         if (!this.$instance) {
             app.$init(this, appConfig);
             this.$instance = app;
+            this.$appConfig = appConfig;
         }
 
         if (arguments.length === 2 && arguments[1] === true) {
@@ -115,6 +116,9 @@ exports.default = {
 
         app.$wxapp = getApp();
 
+        APP_EVENT = APP_EVENT.concat(appConfig.appEvents || []);
+        PAGE_EVENT = PAGE_EVENT.concat(appConfig.pageEvents || []);
+
         APP_EVENT.forEach(function (v) {
             config[v] = function () {
                 for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
@@ -122,6 +126,7 @@ exports.default = {
                 }
 
                 var rst = void 0;
+                !app.$wxapp && (app.$wxapp = getApp());
                 app[v] && (rst = app[v].apply(app, args));
                 return rst;
             };
@@ -161,9 +166,8 @@ exports.default = {
                 page.$prefetchData = {};
             }
             args.push(secParams);
-            page.onLoad && page.onLoad.apply(page, args);
 
-            page.$mixins.forEach(function (mix) {
+            [].concat(page.$mixins, page).forEach(function (mix) {
                 mix['onLoad'] && mix['onLoad'].apply(page, args);
             });
 
@@ -177,22 +181,22 @@ exports.default = {
 
             self.$instance.__prevPage__ = page;
 
-            page.onShow && page.onShow.apply(page, args);
-
-            page.$mixins.forEach(function (mix) {
+            [].concat(page.$mixins, page).forEach(function (mix) {
                 mix['onShow'] && mix['onShow'].apply(page, args);
             });
 
             var pages = getCurrentPages();
             var pageId = pages[pages.length - 1].__route__;
+            var webViewId = pages[pages.length - 1].__wxWebviewId__;
 
-            if (self.$instance.__route__ !== pageId) {
+            if (self.$instance.__wxWebviewId__ !== webViewId) {
+
+                page.$wxpage = this;
 
                 self.$instance.__route__ = pageId;
+                self.$instance.__wxWebviewId__ = webViewId;
 
-                page.onRoute && page.onRoute.apply(page, args);
-
-                page.$mixins.forEach(function (mix) {
+                [].concat(page.$mixins, page).forEach(function (mix) {
                     mix['onRoute'] && mix['onRoute'].apply(page, args);
                 });
             }
@@ -208,15 +212,19 @@ exports.default = {
                     }
 
                     var rst = void 0;
-                    page[v] && (rst = page[v].apply(page, args));
 
-                    if (v === 'onShareAppMessage') return rst;
+                    if (v === 'onShareAppMessage') {
+                        page[v] && (rst = page[v].apply(page, args));
+                        return rst;
+                    }
 
-                    page.$mixins.forEach(function (mix) {
+                    [].concat(page.$mixins, page).forEach(function (mix) {
                         mix[v] && mix[v].apply(page, args);
                     });
 
-                    page.$apply();
+                    if (v !== 'onPageScroll') {
+                        page.$apply();
+                    }
 
                     return rst;
                 };
@@ -225,6 +233,12 @@ exports.default = {
 
         if (!page.onShareAppMessage) {
             delete config.onShareAppMessage;
+        }
+
+        if ([].concat(page.$mixins, page).findIndex(function (mix) {
+            return mix['onPageScroll'];
+        }) === -1) {
+            delete config.onPageScroll;
         }
 
         return $bindEvt(config, page, '');

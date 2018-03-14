@@ -16,7 +16,6 @@
     left: 0;
     align-items: center;
     align-content: center;
-    z-index: 1000;
 }
   .loading__image {
     position: relative;
@@ -27,7 +26,7 @@
     background-image: url(https://s10.mogucdn.com/mlcdn/c45406/170607_5241335cb37ka3ab7781ddh504ggh_200x200.png);
 }
   .loading__image--mall {
-    background-image: url(https://s10.mogucdn.com/mlcdn/c45406/170810_2kca9ccaag9cej65jagf8h554lcl5_200x200.png);
+    background-image: url(https://s10.mogucdn.com/mlcdn/c45406/171023_625g128f20b5k0aace38jgghe737b_200x200.png);
 }
   .loading__slip {
     animation: loadingRotate 1050ms infinite;

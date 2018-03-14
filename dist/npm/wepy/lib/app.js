@@ -51,7 +51,6 @@ var RequestMQ = {
         }
     },
     request: function request(obj) {
-        var me = this;
 
         obj = obj || {};
         obj = typeof obj === 'string' ? { url: obj } : obj;
@@ -110,26 +109,43 @@ var _class = function () {
             var self = this;
             var noPromiseMethods = {
                 stopRecord: true,
+                getRecorderManager: true,
                 pauseVoice: true,
                 stopVoice: true,
                 pauseBackgroundAudio: true,
                 stopBackgroundAudio: true,
-                showNavigationBarLoading: true,
-                hideNavigationBarLoading: true,
-                createAnimation: true,
-                createContext: true,
-                createCanvasContext: true,
-                createSelectorQuery: true,
+                getBackgroundAudioManager: true,
                 createAudioContext: true,
                 createInnerAudioContext: true,
                 createVideoContext: true,
                 createCameraContext: true,
+
                 createMapContext: true,
-                pageScrollTo: true,
-                onBLEConnectionStateChange: true,
+
+                canIUse: true,
+                startAccelerometer: true,
+                stopAccelerometer: true,
+                startCompass: true,
+                stopCompass: true,
                 onBLECharacteristicValueChange: true,
+                onBLEConnectionStateChange: true,
+
+                hideToast: true,
+                hideLoading: true,
+                showNavigationBarLoading: true,
+                hideNavigationBarLoading: true,
+                navigateBack: true,
+                createAnimation: true,
+                pageScrollTo: true,
+                createSelectorQuery: true,
+                createCanvasContext: true,
+                createContext: true,
+                drawCanvas: true,
                 hideKeyboard: true,
-                stopPullDownRefresh: true
+                stopPullDownRefresh: true,
+
+                arrayBufferToBase64: true,
+                base64ToArrayBuffer: true
             };
             if (noPromiseAPI) {
                 if (Array.isArray(noPromiseAPI)) {
@@ -167,7 +183,8 @@ var _class = function () {
                                     return wx[key](obj);
                                 }
                                 if (self.$addons.promisify) {
-                                    return new Promise(function (resolve, reject) {
+                                    var task = void 0;
+                                    var p = new Promise(function (resolve, reject) {
                                         var bak = {};
                                         ['fail', 'success', 'complete'].forEach(function (k) {
                                             bak[k] = obj[k];
@@ -180,8 +197,22 @@ var _class = function () {
                                         });
                                         if (self.$addons.requestfix && key === 'request') {
                                             RequestMQ.request(obj);
-                                        } else wx[key](obj);
+                                        } else {
+                                            task = wx[key](obj);
+                                        }
                                     });
+                                    if (key === 'uploadFile' || key === 'downloadFile') {
+                                        p.progress = function (cb) {
+                                            task.onProgressUpdate(cb);
+                                            return p;
+                                        };
+                                        p.abort = function (cb) {
+                                            cb && cb();
+                                            task.abort();
+                                            return p;
+                                        };
+                                    }
+                                    return p;
                                 } else {
                                     var bak = {};
                                     ['fail', 'success', 'complete'].forEach(function (k) {
@@ -195,7 +226,9 @@ var _class = function () {
                                     });
                                     if (self.$addons.requestfix && key === 'request') {
                                         RequestMQ.request(obj);
-                                    } else wx[key](obj);
+                                    } else {
+                                        return wx[key](obj);
+                                    }
                                 }
                             };
                         }

@@ -1,4 +1,4 @@
-<view class="mask mask__status--{{status}}">
+<view class="mask mask__status--{{status}}" style="z-index: {{zIndex}};">
     <view class="mask__bg" style="background: rgba({{backgroundColor}},{{opacity}});" bindtap="omMaskTap"></view>
     <view class="mask__content mask__content--{{cAlign}}" style="{{__positionStyle}}">
         <slot></slot>

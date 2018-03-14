@@ -97,6 +97,7 @@ var _class = function (_component) {
 
             if (!this.$parent.__route__) {
                 this.$parent.__route__ = getCurrentPages()[0].__route__;
+                this.$parent.__wxWebviewId__ = getCurrentPages()[0].__wxWebviewId__;
             }
             var absoluteRoute = this.$parent.__route__[0] !== '/' ? '/' + this.$parent.__route__ : this.$parent.__route__;
             var realPath = _util2.default.$resolvePath(absoluteRoute, url.url.split('?')[0]);
