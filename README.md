@@ -2,7 +2,7 @@
 wepy with minui
 本项目仅供参考，如有疑问欢迎提issue，我会尽力解决。
 
-## min-cli 1.0.7-beta.3, wepy 1.6.1-alpha7
+## min-cli 1.0.7-beta.6, wepy 1.7.0
 
 ## 使用方法
 
